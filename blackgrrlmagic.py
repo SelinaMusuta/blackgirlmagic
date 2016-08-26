@@ -1,13 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # by Selina Musuta - @pumzi_code
+
+# Goals:  I want to be able to follow all users that #blackgirlmagic (and other variations). I want to retweet those tweets
 # Questions for Selina:  What are the parameters?
 # .gitignore should include credentials.py (contains my keys and tokens that i do not want to share publicly)
 
-# Notes: Add StreamListener object to monitor tweets in real time and catches them.
+# Challenges: Twitter has a rate limit.  Worried about being tagged as spam by Twitter.
+
+# Notes 4 the Future: 
+#Add StreamListener object to monitor tweets in real time and catches them.
+# Build a chronjob
 # Import credentials as a module
 
 # Import Tweepy, time
+# "Tweepy makes it easier to use the twitter streaming api by handling authentication, connection, creating and destroying the session, reading incoming messages, and partially routing messages."
 import tweepy, time
 
 # Import csv
