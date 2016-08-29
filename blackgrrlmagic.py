@@ -29,7 +29,7 @@ import sys
 api_sleep = 15 
 
 # up to 100 users fetched per request
-api_user_page_size = 100
+max_tweets = 100
 
 # Consumer key, consumer secret, access token, access secret allows access to the twitter API
 cons_key =  " "
@@ -64,10 +64,18 @@ def limit_handled(cursor):
         except tweepy.RateLimitError:
             throttleapi()
 
+# Write a function to get ids with a particular hashtag & retweet
+
+def fetch_ids():
+    pass
+
+#  Write a function to reteweet ids with the hashtag "blackgirlmagic"
+
+
 # Write a function that uses the blackgirlmagic query to fetch users name, the time/date they created the post and print out 100 unique user results. Later create a function to save user
 
 def fetch_users(followers):
-    for tweet in limit_handled(tweepy.Cursor(api.search, q=('blackgirlmagic')).items(api_user_page_size)):
+    for tweet in limit_handled(tweepy.Cursor(api.search, q=('blackgirlmagic')).items(max_tweets)):
         print "Name:", tweet.author.name.encode('utf8')
         print "Tweet created:", tweet.created_at
         user = tweet.author.screen_name.encode('utf8')
